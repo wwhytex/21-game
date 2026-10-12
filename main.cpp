@@ -10,26 +10,35 @@ int GetRandom(int min, int max) {
     return dist(gen);
 }
 
-int main(){
+int main() {
     auto randomcard1 = GetRandom(2, 10);
     auto randomcard2 = GetRandom(2, 10);
+    auto randomcard3 = GetRandom(2, 10);
     int input;
     int playercard = randomcard1;
     int botcard = randomcard2;
-    
+
     cout << "Bot cards " << botcard << endl;
     cout << "Your cards " << playercard << endl;
     cout << "More = 1 " << endl;
     cout << "Stop = 2 " << endl;
     cin >> input;
 
-    while(true) {
-        if (input == "1") {
-            
+    while (true) {
+        if (input == 1) {
+            int addcard = playercard + randomcard3;
+            cout << addcard << endl;
         }
-
-
+        else if (input == 2) {
+            if (botcard > playercard) {
+                cout << "bot wins" << endl;
+            }
+            else if (playercard > botcard) {
+                cout << "player wins" << endl;
+            }
+            else if (playercard == botcard) {
+                cout << "draw";
+            }
+        }
     }
-
-
 }
